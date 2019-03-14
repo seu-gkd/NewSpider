@@ -4,72 +4,135 @@ class LouPan(object):
         self.city = city
         self.region = region
         # 小区名
-        self.xiaoqu = " "
+        self.xiaoqu = ''
         # 单价
-        self.price = " "
+        self.price = ''
         # 总价
-        self.total = " "
+        self.total = ''
         # url
-        self.url = " "
+        self.url = ''
 
         ## 基本信息
         # 物业类型
-        self.propertyType = " "
+        self.propertyType = ''
         # 参考价格
-        self.referencePrice = " "
+        self.referencePrice = ''
         # 项目特色
-        self.projectFeatures = " "
+        self.projectFeatures = ''
         # 区域位置
-        self.regionallocation = " "
+        self.regionallocation = ''
         # 楼盘地址
-        self.propertyaddress = " "
+        self.propertyaddress = ''
         # 售楼处地址
-        self.salesOfficeAddress = " "
+        self.salesOfficeAddress = ''
         # 开发商
-        self.developer = " "
+        self.developer = ''
 
         ## 规划信息
         # 建筑类型
-        self.buildingType = " "
+        self.buildingType = ''
         # 绿化率
-        self.landscapingRatio = " "
+        self.landscapingRatio = ''
         # 占地面积
-        self.siteArea = " "
+        self.siteArea = ''
         # 容积率
-        self.floorAreaRatio = " "
+        self.floorAreaRatio = ''
         # 建筑面积
-        self.buildingArea = " "
+        self.buildingArea = ''
         # 产权年限
-        self.yearofpropertyRights = " "
+        self.yearofpropertyRights = ''
         # 规划户数
-        self.numPlan = " "
+        self.numPlan = ''
         # 楼盘户型
-        self.designType = " "
+        self.designType = ''
 
         ## 配套信息
         # 物业公司
-        self.propertyCompany = " "
+        self.propertyCompany = ''
         # 车位配比
-        self.parkingRatio = " "
+        self.parkingRatio = ''
         # 物业费
-        self.propertycosts = " "
+        self.propertycosts = ''
         # 供暖方式
-        self.heatingMethod = " "
+        self.heatingMethod = ''
         # 供水方式
-        self.waterSupplyMethod = " "
+        self.waterSupplyMethod = ''
         # 供电方式
-        self.powerSupply = " "
+        self.powerSupply = ''
         # 车位
-        self.parkingSpace = " "
+        self.parkingSpace = ''
         # 周边信息
-        self.nearby = " "
+        self.nearby = ''
 
         ## 其他
         # 面积
-        self.area = " "
+        self.area = ''
+        # 图片
+        self.date = ''
 
     def text(self):
-        return str(self.city) + "," + \
+        if self.city == '':
+            if self.region == '':
+                self.region = '暂无信息'
+            if self.xiaoqu == '':
+                self.xiaoqu = '暂无信息'
+            if self.price == '':
+                self.price = '暂无信息'
+            if self.total == '':
+                self.total = '暂无信息'
+            if self.url == '':
+                self.url = '暂无信息'
+            if self.propertyType == '':
+                self.propertyType = '暂无信息'
+            if self.referencePrice == '':
+                self.referencePrice = '暂无信息'
+            if self.projectFeatures == '':
+                self.projectFeatures = '暂无信息'
+            if self.regionallocation == '':
+                self.regionallocation = '暂无信息'
+            if self.propertyaddress == '':
+                self.propertyaddress = '暂无信息'
+            if self.salesOfficeAddress == '':
+                self.salesOfficeAddress = '暂无信息'
+            if self.developer == '':
+                self.developer = '暂无信息'
+            if self.buildingType == '':
+                self.buildingType = '暂无信息'
+            if self.landscapingRatio == '':
+                self.landscapingRatio = '暂无信息'
+            if self.siteArea == '':
+                self.siteArea = '暂无信息'
+            if self.floorAreaRatio == '':
+                self.floorAreaRatio = '暂无信息'
+            if self.buildingArea == '':
+                self.buildingArea = '暂无信息'
+            if self.yearofpropertyRights == '':
+                self.yearofpropertyRights = '暂无信息'
+            if self.numPlan == '':
+                self.numPlan = '暂无信息'
+            if self.designType == '':
+                self.designType = '暂无信息'
+            if self.propertyCompany == '':
+                self.propertyCompany = '暂无信息'
+            if self.parkingRatio == '':
+                self.parkingRatio = '暂无信息'
+            if self.propertycosts == '':
+                self.propertycosts = '暂无信息'
+            if self.heatingMethod == '':
+                self.heatingMethod = '暂无信息'
+            if self.waterSupplyMethod == '':
+                self.waterSupplyMethod = '暂无信息'
+            if self.powerSupply == '':
+                self.powerSupply = '暂无信息'
+            if self.parkingSpace == '':
+                self.parkingSpace = '暂无信息'
+            if self.nearby == '':
+                self.nearby = '暂无信息'
+            if self.area == '':
+                self.area = '暂无信息'
+
+        return str(self.date) + "," + \
+               str(self.city) + "," + \
                str(self.region) + "," + \
                str(self.xiaoqu) + "," + \
                str(self.price) + "," + \
@@ -105,10 +168,10 @@ class LouPan(object):
                str(self.area)
 
     def feature(self):
-        return "city, region, xiaoqu, price, total, url, propertyType, referencePrice, projectFeatures, " \
-               "regionallocation, propertyaddress, salesOfficeAddress, developer, buildingType, " \
-               "landscapingRatio, siteArea, floorAreaRatio, buildingArea, yearofpropertyRights, " \
-               "numPlan, designType, propertyCompany, parkingRatio, propertycosts, heatingMethod, " \
-               "waterSupplyMethod, powerSupply, parkingSpace, nearby, area"
+        return "date,city,region,xiaoqu,price,total,url," \
+               "propertyType,referencePrice,projectFeatures,regionallocation,propertyaddress,salesOfficeAddress,developer," \
+               "buildingType,landscapingRatio,siteArea,floorAreaRatio,buildingArea,yearofpropertyRights,numPlan,designType," \
+               "propertyCompany,parkingRatio,propertycosts,heatingMethod,waterSupplyMethod,powerSupply,parkingSpace,nearby,area"
+
 
     # Date, city, region, xiaoqu, price, total, url, propertyType, referencePrice, projectFeatures, regionallocation, propertyaddress, salesOfficeAddress, developer, buildingType, landscapingRatio, siteArea, floorAreaRatio, buildingArea, yearofpropertyRights, numPlan, designType, propertyCompany, parkingRatio, propertycosts, heatingMethod, waterSupplyMethod, powerSupply, parkingSpace, nearby, area,

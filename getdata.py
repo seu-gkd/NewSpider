@@ -213,15 +213,24 @@ def get_inner(lp):
     # except:
     #     lp.nearby = ''
 
-
-
-
+    ## 图片
+    xcurl = lp.url + 'xiangce/'
+    rsp = requests.get(xcurl, headers=create_headers(xcurl), timeout=3)
+    html = etree.HTML(rsp.text)
+    try:
+        pics = html.xpath('/html/body/div[2]/div[1]/div/div/ul/li/a/img/@src')
+        for pic in pics:
+            lp.date +=  str(pic).split('!')[0]
+        # lp.date = '"' + lp.date + '"'
+    except:
+        lp.date = ''
+    lp.date = ''
     return lp
 
 def save(lps):
     with open('test.txt','a+',encoding='utf-8') as f:
         for i in lps:
-            f.write('test,' + i.text() + '\n')
+            f.write(i.text() + '\n')
         pass
 
 
