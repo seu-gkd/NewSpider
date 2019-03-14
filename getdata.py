@@ -2,6 +2,8 @@ import requests
 from util.headers import *
 from lxml import etree
 from item import loupan
+import threadpool
+from time import sleep
 
 
 def get_page(url):
@@ -19,6 +21,7 @@ def get_region(url):
     regions_py = {}
     url = 'https://' + url
     rsp = requests.get(url, headers=create_headers(url), timeout=3)
+    sleep()
     html = etree.HTML(rsp.text)
     py = html.xpath('/html/body/div[4]/div[2]/ul/li/@data-district-spell')
     regions = html.xpath('/html/body/div[4]/div[2]/ul/li/text()')
@@ -35,7 +38,10 @@ def get_outer(url, page, lp):
     jud_xpath = '/html/body/div[5]/ul[2]/li[{0}]/text()'
     lps = []
     for i in range(1,11):
-        if html.xpath(jud_xpath.format(i))[0] == '猜你喜欢':
+        try:
+            if html.xpath(jud_xpath.format(i))[0] == '猜你喜欢':
+                break
+        except:
             break
         lp.xiaoqu = str(html.xpath('/html/body/div[5]/ul[2]/li[{0}]/div/div[1]/a/text()'.format(i))[0])
         temp = html.xpath('/html/body/div[5]/ul[2]/li[{0}]/div/div[4]/div[1]/span/text()'.format(i))
@@ -253,6 +259,7 @@ def getInfo2(i):
 
 def getArea(url):
     rsp = requests.get(url, headers=create_headers(url), timeout=3)
+
     html = etree.HTML(rsp.text)
     try:
         area = html.xpath("/html/body/div[2]/div[7]/div/div[2]/div[1]/ul/li[1]/ul/li[2]/p[2]/span[1]/text()")
@@ -267,5 +274,10 @@ def getArea(url):
 if __name__ == '__main__':
     with open('city_url.txt', 'r', encoding='utf-8') as f:
         city_url = f.read().split('\n')
-    for i in city_url:
-        start(i)
+    pool = threadpool.ThreadPool(10)
+    my_requests = threadpool.makeRequests(start, city_url)
+    [pool.putRequest(req) for req in my_requests]
+    pool.wait()
+    pool.dismissWorkers(10, do_join=False)
+    # for i in city_url:
+    #     start(i)
