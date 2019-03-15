@@ -4,12 +4,13 @@ from lxml import etree
 from item import loupan
 import threadpool
 from time import sleep
+from util.scrawl import getHTML
 
 
 def get_page(url):
     url = 'https://' + url
-    rsp = requests.get(url, headers=create_headers(url), timeout=3)
-    html = etree.HTML(rsp.text)
+    # rsp = requests.get(url, headers=create_headers(url), timeout=3)
+    html = getHTML(url)
     count = 1
     while html.xpath('/html/body/section[2]/div/a[{0}]/text()'.format(count)) != []:
         count += 1
@@ -17,12 +18,13 @@ def get_page(url):
     return page
     pass
 
+
 def get_region(url):
     regions_py = {}
     url = 'https://' + url
-    rsp = requests.get(url, headers=create_headers(url), timeout=3)
-    sleep()
-    html = etree.HTML(rsp.text)
+    # rsp = requests.get(url, headers=create_headers(url), timeout=3)
+    # html = etree.HTML(rsp.text)
+    html = getHTML(url)
     py = html.xpath('/html/body/div[4]/div[2]/ul/li/@data-district-spell')
     regions = html.xpath('/html/body/div[4]/div[2]/ul/li/text()')
     for i in range(len(py)):
@@ -33,8 +35,9 @@ def get_region(url):
 
 def get_outer(url, page, lp):
     url = url + '/pg' + str(page)
-    rsp = requests.get(url, headers=create_headers(url), timeout=3)
-    html = etree.HTML(rsp.text)
+    # rsp = requests.get(url, headers=create_headers(url), timeout=3)
+    # html = etree.HTML(rsp.text)
+    html = getHTML(url)
     jud_xpath = '/html/body/div[5]/ul[2]/li[{0}]/text()'
     lps = []
     for i in range(1,11):
@@ -61,8 +64,9 @@ def get_outer(url, page, lp):
 def get_inner(lp):
     # 详情url
     xqurl = lp.url + 'xiangqing/'
-    rsp = requests.get(xqurl, headers=create_headers(xqurl), timeout=3)
-    html = etree.HTML(rsp.text)
+    # rsp = requests.get(xqurl, headers=create_headers(xqurl), timeout=3)
+    # html = etree.HTML(rsp.text)
+    html = getHTML(xqurl)
 
     ## 基本信息
     # 物业类型
@@ -221,8 +225,9 @@ def get_inner(lp):
 
     ## 图片
     xcurl = lp.url + 'xiangce/'
-    rsp = requests.get(xcurl, headers=create_headers(xcurl), timeout=3)
-    html = etree.HTML(rsp.text)
+    # rsp = requests.get(xcurl, headers=create_headers(xcurl), timeout=3)
+    # html = etree.HTML(rsp.text)
+    html = getHTML(xcurl)
     try:
         pics = html.xpath('/html/body/div[2]/div[1]/div/div/ul/li/a/img/@src')
         for pic in pics:
@@ -230,14 +235,14 @@ def get_inner(lp):
         # lp.date = '"' + lp.date + '"'
     except:
         lp.date = ''
-    lp.date = ''
     return lp
 
 def save(lps):
+    print('save')
     with open('test.txt','a+',encoding='utf-8') as f:
         for i in lps:
             f.write(i.text() + '\n')
-        pass
+
 
 
 def start(i):
@@ -258,9 +263,10 @@ def getInfo2(i):
     return i[0].split("\n")[1].strip().replace(',','，')
 
 def getArea(url):
-    rsp = requests.get(url, headers=create_headers(url), timeout=3)
+    # rsp = requests.get(url, headers=create_headers(url), timeout=3)
+    # html = etree.HTML(rsp.text)
 
-    html = etree.HTML(rsp.text)
+    html = getHTML(url)
     try:
         area = html.xpath("/html/body/div[2]/div[7]/div/div[2]/div[1]/ul/li[1]/ul/li[2]/p[2]/span[1]/text()")
         sum = 0
