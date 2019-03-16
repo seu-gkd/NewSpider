@@ -231,7 +231,7 @@ def get_inner(lp):
     try:
         pics = html.xpath('/html/body/div[2]/div[1]/div/div/ul/li/a/img/@src')
         for pic in pics:
-            lp.date +=  str(pic).split('!')[0]
+            lp.date +=  str(pic).split('!')[0] + ';'
         # lp.date = '"' + lp.date + '"'
     except:
         lp.date = ''
