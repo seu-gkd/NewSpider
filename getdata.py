@@ -230,8 +230,13 @@ def get_inner(lp):
     html = getHTML(xcurl)
     try:
         pics = html.xpath('/html/body/div[2]/div[1]/div/div/ul/li/a/img/@src')
+        count = 0
         for pic in pics:
-            lp.date +=  str(pic).split('!')[0] + ';'
+            temp = pic.split('/')[-1].split('.jpg')[0]
+            lp.date +=  str(temp) + ';'
+            count += 1
+            if count > 4:
+                break
         # lp.date = '"' + lp.date + '"'
     except:
         lp.date = ''
@@ -239,7 +244,7 @@ def get_inner(lp):
 
 def save(lps):
     print('save')
-    with open('test.txt','a+',encoding='utf-8') as f:
+    with open('data/info.csv', 'a+', encoding='utf-8') as f:
         for i in lps:
             f.write(i.text() + '\n')
 
@@ -248,6 +253,8 @@ def save(lps):
 def start(i):
     info = i.split(',')
     regions, regions_py = get_region(info[0])
+    with open('check.txt','w+',encoding='utf-8') as f:
+        f.write(info[1] + '\n')
     for region in regions_py.keys():
         pages = get_page(info[0] + '/' + region)
         lp = loupan.LouPan(info[1], regions_py[region])
