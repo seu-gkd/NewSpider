@@ -29,7 +29,7 @@ def get_region(url):
     regions = html.xpath('/html/body/div[4]/div[2]/ul/li/text()')
     for i in range(len(py)):
         regions_py[py[i]] = regions[i]
-    print("共有{0}个区".format(len(py)))
+    print("{0} ,共有{1}个区".format(url, len(py)))
     return regions, regions_py
 
 
@@ -236,6 +236,7 @@ def get_inner(lp):
             lp.date +=  str(temp) + ';'
             count += 1
             if count > 4:
+                count = 0
                 break
         # lp.date = '"' + lp.date + '"'
     except:
@@ -244,7 +245,7 @@ def get_inner(lp):
 
 def save(lps):
     print('save')
-    with open('data/info.csv', 'a+', encoding='utf-8') as f:
+    with open('data/info.txt', 'a+', encoding='utf-8') as f:
         for i in lps:
             f.write(i.text() + '\n')
 
@@ -253,7 +254,7 @@ def save(lps):
 def start(i):
     info = i.split(',')
     regions, regions_py = get_region(info[0])
-    with open('check.txt','w+',encoding='utf-8') as f:
+    with open('check.txt','a+',encoding='utf-8') as f:
         f.write(info[1] + '\n')
     for region in regions_py.keys():
         pages = get_page(info[0] + '/' + region)
