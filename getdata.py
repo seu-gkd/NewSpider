@@ -5,6 +5,7 @@ from item import loupan
 import threadpool
 from time import sleep
 from util.scrawl import getHTML
+import os
 
 
 def get_page(url):
@@ -222,24 +223,12 @@ def get_inner(lp):
     #             lp.nearby += html.xpath(temp_xpath2.format(i)) + ':' + html.xpath(temp_xpath.format(i)) + '\n'
     # except:
     #     lp.nearby = ''
-
-    ## 图片
-    xcurl = lp.url + 'xiangce/'
-    # rsp = requests.get(xcurl, headers=create_headers(xcurl), timeout=3)
-    # html = etree.HTML(rsp.text)
-    html = getHTML(xcurl)
-    try:
-        pics = html.xpath('/html/body/div[2]/div[1]/div/div/ul/li/a/img/@src')
-        for pic in pics:
-            lp.date +=  str(pic).split('!')[0] + ';'
-        # lp.date = '"' + lp.date + '"'
-    except:
-        lp.date = ''
+    lp.date = '123123'
     return lp
 
 def save(lps):
     print('save')
-    with open('test.txt','a+',encoding='utf-8') as f:
+    with open(os.getcwd() + 'test.txt','a+',encoding='utf-8') as f:
         for i in lps:
             f.write(i.text() + '\n')
 

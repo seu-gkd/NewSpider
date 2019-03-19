@@ -3,7 +3,6 @@ aq.fang.ke.com/loupan,安庆
 ay.fang.ke.com/loupan,安阳
 ak.fang.ke.com/loupan,安康
 aks.fang.ke.com/loupan,阿克苏
-bj.fang.ke.com/loupan,北京
 baoding.fang.ke.com/loupan,保定
 baotou.fang.ke.com/loupan,包头
 bx.fang.ke.com/loupan,本溪
@@ -29,19 +28,14 @@ chizhou.fang.ke.com/loupan,池州
 changde.fang.ke.com/loupan,常德
 chenzhou.fang.ke.com/loupan,郴州
 chaozhou.fang.ke.com/loupan,潮州
-cd.fang.ke.com/loupan,成都
 chuxiong.fang.ke.com/loupan,楚雄
 cj.fang.ke.com/loupan,昌吉
-cq.fang.ke.com/loupan,重庆
-cs.fang.ke.com/loupan,长沙
 dingzhou.fang.ke.com/loupan,定州
 dt.fang.ke.com/loupan,大同
-dl.fang.ke.com/loupan,大连
 dd.fang.ke.com/loupan,丹东
 dq.fang.ke.com/loupan,大庆
 dongying.fang.ke.com/loupan,东营
 dezhou.fang.ke.com/loupan,德州
-dg.fang.ke.com/loupan,东莞
 dy.fang.ke.com/loupan,德阳
 dazhou.fang.ke.com/loupan,达州
 dali.fang.ke.com/loupan,大理
@@ -53,10 +47,8 @@ fushun.fang.ke.com/loupan,抚顺
 fy.fang.ke.com/loupan,阜阳
 fz.fang.ke.com/loupan,福州
 fuzhou.fang.ke.com/loupan,抚州
-fs.fang.ke.com/loupan,佛山
 fcg.fang.ke.com/loupan,防城港
 ganzhou.fang.ke.com/loupan,赣州
-gz.fang.ke.com/loupan,广州
 gl.fang.ke.com/loupan,桂林
 gg.fang.ke.com/loupan,贵港
 ga.fang.ke.com/loupan,广安
@@ -68,9 +60,7 @@ hlbr.fang.ke.com/loupan,呼伦贝尔
 hld.fang.ke.com/loupan,葫芦岛
 hrb.fang.ke.com/loupan,哈尔滨
 ha.fang.ke.com/loupan,淮安
-hz.fang.ke.com/loupan,杭州
 huzhou.fang.ke.com/loupan,湖州
-hf.fang.ke.com/loupan,合肥
 huainan.fang.ke.com/loupan,淮南
 huaibei.fang.ke.com/loupan,淮北
 huangshan.fang.ke.com/loupan,黄山
@@ -96,7 +86,6 @@ jh.fang.ke.com/loupan,金华
 jdz.fang.ke.com/loupan,景德镇
 jiujiang.fang.ke.com/loupan,九江
 jian.fang.ke.com/loupan,吉安
-jn.fang.ke.com/loupan,济南
 jining.fang.ke.com/loupan,济宁
 jiaozuo.fang.ke.com/loupan,焦作
 jiyuan.fang.ke.com/loupan,济源
@@ -138,7 +127,6 @@ mm.fang.ke.com/loupan,茂名
 meizhou.fang.ke.com/loupan,梅州
 mianyang.fang.ke.com/loupan,绵阳
 ms.fang.ke.com/loupan,眉山
-nj.fang.ke.com/loupan,南京
 nt.fang.ke.com/loupan,南通
 nb.fang.ke.com/loupan,宁波
 np.fang.ke.com/loupan,南平
@@ -160,18 +148,15 @@ qhd.fang.ke.com/loupan,秦皇岛
 qqhr.fang.ke.com/loupan,齐齐哈尔
 quzhou.fang.ke.com/loupan,衢州
 quanzhou.fang.ke.com/loupan,泉州
-qd.fang.ke.com/loupan,青岛
 qianjiang.fang.ke.com/loupan,潜江
 qy.fang.ke.com/loupan,清远
 qinzhou.fang.ke.com/loupan,钦州
 qj.fang.ke.com/loupan,曲靖
 qingyang.fang.ke.com/loupan,庆阳
 rz.fang.ke.com/loupan,日照
-sh.fang.ke.com/loupan,上海
 sp.fang.ke.com/loupan,四平
 songyuan.fang.ke.com/loupan,松原
 suihua.fang.ke.com/loupan,绥化
-su.fang.ke.com/loupan,苏州
 sq.fang.ke.com/loupan,宿迁
 shuyang.fang.ke.com/loupan,沭阳
 sx.fang.ke.com/loupan,绍兴
@@ -182,7 +167,6 @@ shangqiu.fang.ke.com/loupan,商丘
 shiyan.fang.ke.com/loupan,十堰
 shaoyang.fang.ke.com/loupan,邵阳
 shaoguan.fang.ke.com/loupan,韶关
-sz.fang.ke.com/loupan,深圳
 st.fang.ke.com/loupan,汕头
 sd.fang.ke.com/loupan,顺德
 sw.fang.ke.com/loupan,汕尾
@@ -190,8 +174,6 @@ san.fang.ke.com/loupan,三亚
 sn.fang.ke.com/loupan,遂宁
 szs.fang.ke.com/loupan,石嘴山
 sjz.fang.ke.com/loupan,石家庄
-sy.fang.ke.com/loupan,沈阳
-tj.fang.ke.com/loupan,天津
 ts.fang.ke.com/loupan,唐山
 ty.fang.ke.com/loupan,太原
 tongliao.fang.ke.com/loupan,通辽
@@ -207,7 +189,6 @@ wz.fang.ke.com/loupan,温州
 wuhu.fang.ke.com/loupan,芜湖
 wf.fang.ke.com/loupan,潍坊
 weihai.fang.ke.com/loupan,威海
-wh.fang.ke.com/loupan,武汉
 wuzhou.fang.ke.com/loupan,梧州
 ws.fang.ke.com/loupan,文山
 weinan.fang.ke.com/loupan,渭南
@@ -218,7 +199,6 @@ xinzhou.fang.ke.com/loupan,忻州
 xlglm.fang.ke.com/loupan,锡林郭勒盟
 xz.fang.ke.com/loupan,徐州
 xuancheng.fang.ke.com/loupan,宣城
-xm.fang.ke.com/loupan,厦门
 xinxiang.fang.ke.com/loupan,新乡
 xc.fang.ke.com/loupan,许昌
 xinyang.fang.ke.com/loupan,信阳
@@ -239,7 +219,6 @@ yc.fang.ke.com/loupan,盐城
 yz.fang.ke.com/loupan,扬州
 yw.fang.ke.com/loupan,义乌
 ych.fang.ke.com/loupan,宜春
-yt.fang.ke.com/loupan,烟台
 yichang.fang.ke.com/loupan,宜昌
 yy.fang.ke.com/loupan,岳阳
 yiyang.fang.ke.com/loupan,益阳

@@ -41,7 +41,7 @@ def get(url, proxy = None):
             return None
 
 def get_proxy():
-    proxy = {
-        "https": "https://" + requests.get("http://127.0.0.1:5010/get/").text
-    }
-    return proxy
+    # proxy = {
+    #     "https": "https://" + requests.get("http://127.0.0.1:5010/get/").text
+    # }
+    return None
